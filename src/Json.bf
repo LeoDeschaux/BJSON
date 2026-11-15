@@ -30,11 +30,5 @@ namespace BJSON
 			let serializer = scope JsonWriter();
 			return serializer.Write(json, outText, true);
 		}
-
-		public static bool Stringify(String outText)
-		{
-			let stringifier = scope Stringifier();
-			return stringifier.Stringify(outText);
-		}
 	}
 }

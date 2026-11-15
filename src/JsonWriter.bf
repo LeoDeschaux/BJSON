@@ -84,9 +84,9 @@ namespace BJSON
 					return false;
 				}
 
-				char8[25] buff;
-				BJSON.Internal.dtoa(value.data.number, &buff);
-				str.Append(&buff);
+				char8[32] buff;
+				char8* end = BJSON.Internal.dtoa(value.data.number, &buff);
+				str.Append(&buff, (int)(end - &buff));
 			default:
 				return false;
 			}
